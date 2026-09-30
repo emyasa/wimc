@@ -142,7 +142,7 @@ void init_event_handler() {
         NULL
     );
 
-    printf("listening for cmd+1, press ctrl-c to quit\n");
+    printf("listening for cmd+(1-9), press ctrl-c to quit\n");
     while (1) {
         EventRef event = NULL;
         OSStatus status = ReceiveNextEvent(
