@@ -20,8 +20,8 @@ static const int number_to_keycode[] = {
 };
 
 typedef struct {
-    int keyCode;
-    char *path;
+    int key_code;
+    char *filename;
 } cmd_hotkey;
 
 cmd_hotkey hotkeys[MAX_HOTKEYS];
@@ -52,10 +52,10 @@ void parse_hotkeys() {
                     strcpy(key, (char *) e.data.scalar.value);
                 } else {
                     if (strcmp("keyCode", key) == 0) {
-                        hotkeys[hotkey_count].keyCode = atoi((char *) e.data.scalar.value);
+                        hotkeys[hotkey_count].key_code = atoi((char *) e.data.scalar.value);
                     } else if (strcmp("dir", key) == 0) {
-                        hotkeys[hotkey_count].path = malloc(strlen((char *) e.data.scalar.value) + 1);
-                        strcpy(hotkeys[hotkey_count].path, (char *) e.data.scalar.value);
+                        hotkeys[hotkey_count].filename = malloc(strlen((char *) e.data.scalar.value) + 1);
+                        strcpy(hotkeys[hotkey_count].filename, (char *) e.data.scalar.value);
 
                         hotkey_count++;
                     }
@@ -89,7 +89,7 @@ void register_hotkeys() {
 
         EventHotKeyRef hotKeyRef = NULL;
         OSStatus status = RegisterEventHotKey(
-                number_to_keycode[hotkey.keyCode],
+                number_to_keycode[hotkey.key_code],
                 cmdKey,
                 hotKeyID,
                 GetApplicationEventTarget(),
@@ -121,8 +121,9 @@ static OSStatus hotKeyHandler(
 
     cmd_hotkey hotkey = hotkeys[hotKeyID.id];
 
-    char command[1024];
-    sprintf(command, "osascript %s", hotkey.path);
+    char *home = getenv("HOME");
+    char command[PATH_MAX];
+    sprintf(command, "osascript %s/%s", home, hotkey.filename);
     system(command);
 
     return noErr;
