@@ -53,7 +53,7 @@ void parse_hotkeys() {
                 } else {
                     if (strcmp("keyCode", key) == 0) {
                         hotkeys[hotkey_count].key_code = atoi((char *) e.data.scalar.value);
-                    } else if (strcmp("dir", key) == 0) {
+                    } else if (strcmp("filename", key) == 0) {
                         hotkeys[hotkey_count].filename = malloc(strlen((char *) e.data.scalar.value) + 1);
                         strcpy(hotkeys[hotkey_count].filename, (char *) e.data.scalar.value);
 

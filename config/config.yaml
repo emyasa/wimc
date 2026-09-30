@@ -1,7 +1,7 @@
 shortcuts:
   - keyCode: 1
-    dir: "terminal.applescript"
+    filename: "terminal.applescript"
   - keyCode: 2
-    dir: "notes.applescript"
+    filename: "notes.applescript"
   - keyCode: 4
-    dir: "browser.applescript"
+    filename: "browser.applescript"
