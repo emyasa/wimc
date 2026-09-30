@@ -1,22 +1,22 @@
 tell application "System Events"
-    set ghosttyRunning to (name of processes) contains "Ghostty"
-    if ghosttyRunning then
-        tell process "Ghostty"
+    set terminalRunning to (name of processes) contains "Terminal"
+    if terminalRunning then
+        tell process "Terminal"
             set windowCount to count of windows
         end tell
     end if
 end tell
 
-if ghosttyRunning and windowCount > 0 then
-    tell application "Ghostty"
+if terminalRunning and windowCount > 0 then
+    tell application "Terminal"
         activate
         return
     end tell
 end if
 
-do shell script "open -a Ghostty"
+do shell script "open -a Terminal"
 tell application "System Events"
-    tell process "Ghostty"
+    tell process "Terminal"
 
         repeat until (count of windows) > 0
             delay 0.01

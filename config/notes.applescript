@@ -1,22 +1,22 @@
 tell application "System Events"
-    set obsidianRunning to (name of processes) contains "Obsidian"
-    if obsidianRunning then
-        tell process "Obsidian"
+    set notesRunning to (name of processes) contains "Notes"
+    if notesRunning then
+        tell process "Notes"
             set windowCount to count of windows
         end tell
     end if
 end tell
 
-if obsidianRunning and windowCount > 0 then
-    tell application "Obsidian"
+if notesRunning and windowCount > 0 then
+    tell application "Notes"
         activate
         return
     end tell
 end if
 
-do shell script "open -a Obsidian"
+do shell script "open -a Notes"
 tell application "System Events"
-    tell process "Obsidian"
+    tell process "Notes"
 
         repeat until (count of windows) > 0
             delay 0.01
