@@ -1,0 +1,7 @@
+shortcuts:
+  - keyCode: 1
+    dir: "/Users/emyasa/Development/projects/00-lab/01-c/02-window-manager/config/terminal.applescript"
+  - keyCode: 2
+    dir: "/Users/emyasa/Development/projects/00-lab/01-c/02-window-manager/config/notes.applescript"
+  - keyCode: 4
+    dir: "/Users/emyasa/Development/projects/00-lab/01-c/02-window-manager/config/browser.applescript"
