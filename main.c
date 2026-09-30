@@ -123,7 +123,8 @@ static OSStatus hotKeyHandler(
 
     char *home = getenv("HOME");
     char command[PATH_MAX];
-    sprintf(command, "osascript %s/%s", home, hotkey.filename);
+    sprintf(command, "osascript %s/.config/wimc/%s",
+            home, hotkey.filename);
     system(command);
 
     return noErr;
