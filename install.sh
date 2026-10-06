@@ -12,6 +12,7 @@ curl -fsL https://github.com/emyasa/wimc/archive/refs/heads/main.tar.gz |
   tar -xz -C ~/.config/wimc -s '|wimc-main/config/||' wimc-main/config/*
 
 # Construct and Load the plist to run it as a daemon
+mkdir -p ~/Library/LaunchAgents/
 PROGRAM="$HOME/.local/bin/wimc"
 PLIST="$HOME/Library/LaunchAgents/com.yasaworks.wimc.plist"
 
