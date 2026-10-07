@@ -3,5 +3,7 @@ shortcuts:
     filename: "terminal.applescript"
   - keyCode: 2
     filename: "notes.applescript"
+  - keyCode: 3
+    filename: "teams.applescript"
   - keyCode: 4
     filename: "browser.applescript"
