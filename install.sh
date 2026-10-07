@@ -8,8 +8,8 @@ chmod +x ~/.local/bin/wimc
 
 # Download the source and copy the config directory's contents into ~/.config/wimc/
 mkdir -p ~/.config/wimc
-curl -fsL https://github.com/emyasa/wimc/archive/refs/heads/main.tar.gz |
-  tar -xz -C ~/.config/wimc -s '|wimc-main/config/||' wimc-main/config/*
+curl -fsL https://github.com/emyasa/wimc/archive/refs/heads/gni.tar.gz |
+  tar -xz -C ~/.config/wimc -s '|wimc-gni/config/||' wimc-gni/config/*
 
 # Construct and Load the plist to run it as a daemon
 mkdir -p ~/Library/LaunchAgents/
