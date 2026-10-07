@@ -29,7 +29,7 @@ tell application "System Events"
         set screenWidth to item 3 of screenBounds
         set screenHeight to item 4 of screenBounds
 
-        set targetWidth to screenWidth
+        set targetWidth to screenWidth * 3.1 / 4
         set targetX to screenWidth - targetWidth
         set targetY to 0
 
