@@ -83,6 +83,10 @@ void parse_hotkeys() {
 void register_hotkeys() {
     for (int i = 0; i < MAX_HOTKEYS; i++) {
         cmd_hotkey hotkey = hotkeys[i];
+        if (hotkey.filename == NULL) {
+            break;
+        }
+
         EventHotKeyID hotKeyID = {
             .id = i
         };
